@@ -1,0 +1,20 @@
+{
+  "files": {
+    "main.css": "/university-average-calculator/static/css/main.6d03fa15.chunk.css",
+    "main.js": "/university-average-calculator/static/js/main.ff790e03.chunk.js",
+    "main.js.map": "/university-average-calculator/static/js/main.ff790e03.chunk.js.map",
+    "runtime-main.js": "/university-average-calculator/static/js/runtime-main.7e80bf01.js",
+    "runtime-main.js.map": "/university-average-calculator/static/js/runtime-main.7e80bf01.js.map",
+    "static/js/2.1af0b5b4.chunk.js": "/university-average-calculator/static/js/2.1af0b5b4.chunk.js",
+    "static/js/2.1af0b5b4.chunk.js.map": "/university-average-calculator/static/js/2.1af0b5b4.chunk.js.map",
+    "index.html": "/university-average-calculator/index.html",
+    "static/css/main.6d03fa15.chunk.css.map": "/university-average-calculator/static/css/main.6d03fa15.chunk.css.map",
+    "static/js/2.1af0b5b4.chunk.js.LICENSE.txt": "/university-average-calculator/static/js/2.1af0b5b4.chunk.js.LICENSE.txt"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.7e80bf01.js",
+    "static/js/2.1af0b5b4.chunk.js",
+    "static/css/main.6d03fa15.chunk.css",
+    "static/js/main.ff790e03.chunk.js"
+  ]
+}
