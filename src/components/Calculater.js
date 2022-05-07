@@ -54,6 +54,7 @@ const CalculaterStep1 = (props) => {
   );
 };
 const CalculaterForm = (props) => {
+  console.log(props);
   const [hour, setHour] = useState(0);
   const [mark, setMark] = useState(0);
   return (
@@ -69,7 +70,7 @@ const CalculaterForm = (props) => {
             <button
               onClick={props.addHours}
               type="submit"
-              className="group relative mx-2 flex justify-center py-2 px-4 border border-transparent text-sm font-medium rounded-md text-white bg-indigo-600 hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500"
+              className="mb-4 group relative mx-2 flex justify-center py-2 px-4 border border-transparent text-sm font-medium rounded-md text-white bg-indigo-600 hover:bg-indigo-700 focus:outline-none "
             >
               اضافة مادة
             </button>
@@ -198,22 +199,18 @@ const Calculater = () => {
   };
   const updateData = (datas) => {
     if (data.length > 0) {
-      const find =
-        data.length > 0 &&
-        _.filter([data], function (o) {
-          return o.id === datas.id;
-        });
+      const find = data.length > 0 && data.filter((row) => row.id === datas.id);
+      console.log(find);
       if (find.length > 0) {
         find[0].hours = datas.hours;
         find[0].mark = datas.mark;
-        setData({ ...data, [datas.id]: find[datas.id] });
+        data[datas.id] = find[datas.id] = find[0];
+        setData(data);
       } else {
-        let newArr = [...data]; // copying the old datas array
-        newArr[datas.id] = datas;
-        setData(newArr);
+        setData({ ...data, datas });
       }
     } else {
-      setData([datas]);
+      setData(datas);
     }
   };
 
@@ -222,10 +219,10 @@ const Calculater = () => {
     let nowHours = 0;
     for (let i = 0; i < data.length; i++) {
       const row = data[i];
-      nowAvg += parseInt(row.mark) * parseInt(row.hours);
-      nowHours += parseInt(row.hours);
+      nowAvg += parseFloat(row.mark) * parseFloat(row.hours);
+      nowHours += parseFloat(row.hours);
     }
-    setNowAvg(parseInt(nowAvg) / parseInt(nowHours));
+    setNowAvg(parseFloat(nowAvg) / parseFloat(nowHours));
   };
   const removeHour = (i) => {
     const arrayCopy = data.filter((row) => row.id !== i);
